@@ -1,37 +1,37 @@
 # 🔋 Predictive Maintenance for Electric Vehicle Battery Sensors
 
-## 📖 Descripción del proyecto
-Este proyecto aplica técnicas de **Machine Learning** para predecir fallos en celdas de batería de vehículos eléctricos usando datos sintéticos de sensores.  
-El objetivo es anticipar posibles fallos y optimizar el mantenimiento, reduciendo riesgos y costes operativos.
+## 📖 Project Description
+This project applies **Machine Learning** techniques to predict failures in electric vehicle battery cells using synthetic sensor data.  
+The goal is to anticipate potential failures and optimize maintenance, reducing risks and operational costs.
 
 ---
 
 ## 📊 Dataset
-- **Fuente:** Sintético, generado con `src/generate_data.py`  
-- **Variables principales:**
-  - `voltage_mean`: Voltaje medio de la celda [V]
-  - `current_hv`: Corriente de la batería HV [A]
-  - `capacity_cell1/2/3`: Capacidad de cada celda [Ah]
-  - `temp_battery`: Temperatura de la batería [°C]
-  - `failure`: 0 = sin fallo, 1 = fallo
-- **Filas:** 50,000  
-- **Notas:** Distribución de fallos ~2% del total.
+- **Source:** Synthetic, generated with `src/generate_data.py`  
+- **Main variables:**
+  - `voltage_mean`: Average cell voltage [V]
+  - `current_hv`: High-voltage battery current [A]
+  - `capacity_cell1/2/3`: Capacity of each cell [Ah]
+  - `temp_battery`: Battery temperature [°C]
+  - `failure`: 0 = no failure, 1 = failure
+- **Rows:** 50,000  
+- **Notes:** Failure distribution ~2% of total.
 
 ---
 
-## 🔍 EDA Destacado
-- Visualización de la **distribución de fallos**: la mayoría de las muestras no presentan fallo.
-- **Variables correlacionadas con fallo**:
-  - Voltaje medio bajo (`voltage_mean`)
-  - Corriente HV alta (`current_hv`)
-  - Capacidades de celdas bajas (`capacity_cell1/2/3`)
-  - Temperatura de batería alta (`temp_battery`)
-- **Outliers y valores inconsistentes** detectados y considerados en el preprocesado.
-- Notebook de EDA: [`EDA_Predictive_Maintenance.ipynb`](notebooks/EDA_Predictive_Maintenance.ipynb)
+## 🔍 Key EDA Insights
+- Visualization of the **failure distribution**: most samples show no failure.
+- **Variables correlated with failure**:
+  - Low average voltage (`voltage_mean`)
+  - High HV current (`current_hv`)
+  - Low cell capacities (`capacity_cell1/2/3`)
+  - High battery temperature (`temp_battery`)
+- **Outliers and inconsistent values** were detected and handled during preprocessing.
+- EDA Notebook: [`EDA_Predictive_Maintenance.ipynb`](notebooks/EDA_Predictive_Maintenance.ipynb)
 
 ---
 
-## 🛠️ Tecnologías utilizadas
+## 🛠️ Technologies Used
 - Python 3.10
 - Pandas, NumPy
 - Scikit-learn
@@ -40,25 +40,25 @@ El objetivo es anticipar posibles fallos y optimizar el mantenimiento, reduciend
 
 ---
 
-## 📂 Estructura del proyecto
+## 📂 Project Structure
 ```
 predictive-maintenance-ev/
-├── data/               # Datos generados (CSV)
-├── results/            # Modelos entrenados y gráficas
-├── src/                # Scripts Python
+├── data/               # Generated datasets (CSV)
+├── results/            # Trained models and plots
+├── src/                # Python scripts
 │   ├── generate_data.py
 │   ├── preprocessing.py
 │   ├── train_model.py
 │   └── evaluate.py
-├── notebooks/          # Notebooks de EDA y visualización
+├── notebooks/          # EDA and visualization notebooks
 ├── requirements.txt
 └── README.md
 ```
 
 ---
 
-## ⚙️ Instalación y ejecución
-1. Crear entorno virtual:
+## ⚙️ Installation & Execution
+1. Create a virtual environment:
 ```bash
 python -m venv venv
 # Windows
@@ -68,40 +68,40 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-2. Generar dataset sintético:
+2. Generate synthetic dataset:
 ```bash
 python src/generate_data.py
 ```
 
-3. Entrenar modelo:
+3. Train the model:
 ```bash
 python src/train_model.py
 ```
 
-4. Evaluar modelo y generar matriz de confusión:
+4. Evaluate the model and generate confusion matrix:
 ```bash
 python src/evaluate.py
 ```
 
 ---
 
-## 🚀 Resultados preliminares
-- Modelo: RandomForestClassifier (mejorado con GridSearchCV)  
-- Métricas en test set:
+## 🚀 Preliminary Results
+- Model: RandomForestClassifier (optimized with GridSearchCV)  
+- Metrics on test set:
   - **F1-score:** ~0.85  
   - **Accuracy:** ~0.98  
-- Matriz de confusión guardada en `results/confusion_matrix.png`
+- Confusion matrix saved in `results/confusion_matrix.png`
 
 ---
 
-## 🔮 Próximos pasos
-- Sustituir RandomForest por una **red neuronal** (TensorFlow o PyTorch).  
-- Explorar técnicas de **oversampling/SMOTE** para desbalanceo de clases.  
-- Exportar modelo a **ONNX** o desplegar API con **FastAPI**.  
-- Integrar análisis de batería real si se dispone de dataset del vehículo eléctrico.
+## 🔮 Next Steps
+- Replace RandomForest with a **neural network** (TensorFlow or PyTorch).  
+- Explore **oversampling/SMOTE** techniques for class imbalance.  
+- Export the model to **ONNX** or deploy an API with **FastAPI**.  
+- Integrate real battery datasets if available from EV systems.
 
 ---
 
-## 👨‍💻 Autor
+## 👨‍💻 Author
 - Jordi Moreso – [LinkedIn](https://www.linkedin.com/in/tuusuario/)  
-- Proyecto de IA para **Machine Learning y Predictive Maintenance** en baterías EV.
+- AI project for **Machine Learning and Predictive Maintenance** in EV batteries.
