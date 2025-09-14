@@ -96,8 +96,6 @@ python src/evaluate.py
 
 ## 🔮 Next Steps
 - Replace RandomForest with a **neural network** (TensorFlow or PyTorch).  
-- Explore **oversampling/SMOTE** techniques for class imbalance.  
-- Export the model to **ONNX** or deploy an API with **FastAPI**.  
 - Integrate real battery datasets if available from EV systems.
 
 ---
